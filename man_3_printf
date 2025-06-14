@@ -1,0 +1,33 @@
+.TH _PRINTF 3 "June 2025" "Holberton Project" "User Manual"
+.SH NAME
+_printf \- custom implementation of printf
+.SH SYNOPSIS
+.B #include "main.h"
+.br
+.B int _printf(const char *format, ...);
+.SH DESCRIPTION
+The
+.B _printf()
+function produces output according to a format string.
+It is a simplified version of the standard printf function.
+
+Supported format specifiers include:
+.TP
+.B %c
+Prints a single character.
+.TP
+.B %s
+Prints a string.
+.TP
+.B %d, %i
+Prints a signed decimal integer.
+.TP
+.B %%
+Prints a literal percent sign.
+.SH RETURN VALUE
+Returns the number of characters printed (excluding the null byte).
+.SH AUTHOR
+Name <github.com/Ry-88>
+Name <github.com/Abdulrahman9907>
+.SH SEE ALSO
+.BR printf (3)
