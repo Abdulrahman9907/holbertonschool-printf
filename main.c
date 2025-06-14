@@ -15,6 +15,8 @@ int main(void)
 	printf("String:[%s]\n", "I am a string !");
 	_printf("Percent:[%%]\n");
 	printf("Percent:[%%]\n");
+	printf("%");
+	_printf("%");
 
 	return (0);
 }

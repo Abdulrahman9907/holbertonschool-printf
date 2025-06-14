@@ -49,17 +49,14 @@ return (count);
 /**
 * _printf - custom implementation of printf function
 * @format: character string composed of zero or more directives
-*
 * Description: This function produces output according to a format string.
 * It handles basic format specifiers like %s (string) and %c (character).
 * For unknown specifiers, it prints the % and the character literally.
 * This is a simplified version of the standard printf function.
-*
 * Supported format specifiers:
 * - %s: prints a string
 * - %c: prints a character
 * - %%: prints a literal % character
-*
 * Return: The number of characters printed (excluding null terminator)
 */
 int _printf(const char *format, ...)
@@ -71,9 +68,13 @@ va_list args;
 va_start(args, format);
 while (*format)
 {
-if (*format == '%' && *(format + 1))
+if (*format == '%')
 {
 format++;
+	if (*format == '\0')
+	{
+		break;
+	}
 switch (*format)
 {
 case 's':
@@ -81,16 +82,13 @@ case 's':
 	num += print_string(str);
 break;
 case 'c':
-ch = va_arg(args, int);
-num += _putchar(ch);
+ch = va_arg(args, int), num += _putchar(ch);
 break;
 case '%':
 	num += _putchar('%');
 	break;
 default:
-_putchar('%');
-_putchar(*format);
-num += 2;
+_putchar('%'), _putchar(*format), num += 2;
 break;
 }
 }
