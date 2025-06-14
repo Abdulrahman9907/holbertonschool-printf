@@ -74,7 +74,7 @@ format++;
 	if (*format == '\0')
 	{
 		va_end(args);
-		return (num);
+		return (-1);
 	}
 switch (*format)
 {
