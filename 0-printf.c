@@ -73,7 +73,8 @@ if (*format == '%')
 format++;
 	if (*format == '\0')
 	{
-		break;
+		va_end(args);
+		return (num);
 	}
 switch (*format)
 {
@@ -94,8 +95,7 @@ break;
 }
 else
 {
-_putchar(*format);
-num++;
+_putchar(*format), num++;
 }
 format++;
 }
