@@ -33,7 +33,7 @@ int print_string(const char *str)
 {
 int count = 0;
 
-if (!str)
+if (str == NULL)
 {
 str = "NULL";
 }
