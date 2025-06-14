@@ -33,9 +33,9 @@ int print_string(const char *str)
 {
 int count = 0;
 
-if (str == NULL)
+if (!str)
 {
-str = "NULL";
+str = "(null)";
 }
 while (*str)
 {
@@ -77,8 +77,8 @@ format++;
 switch (*format)
 {
 case 's':
-str = va_arg(args, const char *);
-num += print_string(str);
+	str = va_arg(args, const char *);
+	num += print_string(str);
 break;
 case 'c':
 ch = va_arg(args, int);
