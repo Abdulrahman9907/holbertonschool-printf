@@ -84,6 +84,9 @@ case 'c':
 ch = va_arg(args, int);
 num += _putchar(ch);
 break;
+case '%':
+	num += _putchar('%');
+	break;
 default:
 _putchar('%');
 _putchar(*format);
